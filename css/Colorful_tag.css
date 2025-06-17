@@ -118,3 +118,109 @@
   filter: brightness(1.2); /* 懸浮時提亮背景 */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
+
+
+
+
+
+
+
+/* --- 首頁個人資訊卡樣式 --- */
+
+.profile-card {
+  margin-top: -60px;
+  margin-bottom: 40px;
+  z-index: 10;
+  position: relative;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  object-fit: cover; /* 確保圖片不變形 */
+}
+
+.profile-content {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.profile-name {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-intro {
+  font-size: 16px;
+  color: #666;
+  margin: 8px 0 20px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.profile-stats a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+.profile-stats a:hover {
+    color: #30a9de; /* Fluid 主題的連結懸浮色 */
+}
+
+.profile-stats .stat-count {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.profile-stats .stat-label {
+  font-size: 14px;
+  color: #888;
+}
+
+.profile-icons .icon-item {
+  font-size: 22px;
+  margin: 0 10px;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.profile-icons .icon-item:hover {
+  color: #30a9de; /* Fluid 主題的連結懸浮色 */
+}
+
+/* 響應式調整 */
+@media (min-width: 768px) {
+  .profile-content {
+    text-align: left;
+  }
+  .profile-stats {
+    justify-content: flex-start;
+  }
+}
+
+/* 暗色模式調整 */
+[data-user-color-scheme='dark'] .profile-intro,
+[data-user-color-scheme='dark'] .profile-stats .stat-label {
+  color: #bbb;
+}
+[data-user-color-scheme='dark'] .profile-icons .icon-item {
+  color: #ccc;
+}
+[data-user-color-scheme='dark'] .profile-icons .icon-item:hover,
+[data-user-color-scheme='dark'] .profile-stats a:hover {
+  color: #55aaff;
+}
+[data-user-color-scheme='dark'] .profile-avatar {
+    border-color: #252d38; /* 暗色模式下面板的顏色 */
+}
