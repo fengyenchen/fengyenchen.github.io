@@ -1,0 +1,33 @@
+/* --- 方案三：幾何晶片 & 科技感風 --- */
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.tag-cloud a {
+  padding: 10px 20px;
+  font-size: 16px !important;
+  font-weight: 500;
+  text-decoration: none;
+  color: #eee !important;
+  /* 使用 clip-path 創造切角效果 */
+  clip-path: polygon(10px 0%, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  background: linear-gradient(135deg, #555c6e, #373c49); /* 漸層背景 */
+  transition: all 0.25s ease;
+}
+
+.tag-cloud a:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #667085, #434958);
+  /* 懸浮時的發光效果 */
+  box-shadow: 0 0 15px rgba(80, 150, 220, 0.6); 
+}
+
+/* 暗色模式下，可以加強發光效果 */
+[data-user-color-scheme='dark'] .tag-cloud a:hover {
+  box-shadow: 0 0 20px rgba(50, 180, 250, 0.7);
+}
