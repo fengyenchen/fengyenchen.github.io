@@ -1,5 +1,58 @@
 /* =================================================================== */
-/*                     A. 標籤頁 (Tags Page) 樣式                      */
+/*            A. 全局導覽列圖示與文字統一樣式 (Final Fix)            */
+/* =================================================================== */
+
+/* 1. 針對導覽列中每一個連結 <a> 的基礎設定 */
+#navbar .navbar-nav .nav-item .nav-link {
+  display: flex !important;         /* 使用 Flexbox 進行對齊 */
+  align-items: center !important;  /* 讓圖示和文字垂直居中 */
+  gap: 8px !important;             /* 圖示和文字之間的距離 */
+  transition: all 0.2s ease-in-out;
+}
+
+/* 2. 針對所有圖示 <i> 的樣式 */
+#navbar .navbar-nav .nav-item .nav-link .iconfont {
+  /* 強制設定字體和可見性 */
+  font-family: "iconfont" !important;
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  
+  /* 統一大小和顏色 */
+  font-size: 1.1em !important;
+  color: #fff !important; /* 強制白色 */
+  
+  /* 移除不必要的寬高設定，讓它自適應 */
+  width: auto !important;
+  height: auto !important;
+  line-height: 1 !important; /* 確保行高正常 */
+}
+
+/* 3. 針對所有文字 <span> 的樣式 */
+/* 4. 滑鼠懸浮在整個連結 <a> 上時的效果 */
+#navbar .navbar-nav .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important; /* 背景稍微再亮一點 */
+  border-radius: 6px;
+  transform: translateY(-2px); /* !!! 新增：向上移動 2px !!! */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* !!! 新增：加上陰影 !!! */
+}
+
+/* 4. 滑鼠懸浮在整個連結 <a> 上時的效果 */
+#navbar .navbar-nav .nav-item .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 6px;
+}
+
+/* 懸浮時，圖示和文字的顏色可以保持不變，或稍微提亮 */
+#navbar .navbar-nav .nav-item .nav-link:hover .iconfont,
+#navbar .navbar-nav .nav-item .nav-link:hover span {
+  /* 顏色可以保持白色，或者改成一個更亮的顏色，例如 #eee */
+  color: #fff !important;
+}
+
+
+/* =================================================================== */
+/*                     B. 標籤頁 (Tags Page) 樣式                      */
 /* =================================================================== */
 
 .tagcloud {
@@ -51,7 +104,7 @@
 
 
 /* =================================================================== */
-/*              B. 首頁個人資訊卡 (Home Page Profile Card) 樣式          */
+/*              C. 首頁個人資訊卡 (Home Page Profile Card) 樣式          */
 /* =================================================================== */
 
 /* 卡片本身 */
@@ -223,3 +276,7 @@
     margin: 0 10px;
   }
 }
+
+
+
+
