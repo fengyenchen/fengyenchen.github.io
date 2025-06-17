@@ -1,0 +1,42 @@
+/* 1. 選擇標籤的容器，設定 Flexbox 佈局 */
+.tagcloud {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 16px !important; /* 標籤間距 */
+  padding: 20px 0 !important;
+}
+
+/* 2. 選擇容器內所有的 <a> 標籤，這是我們的目標 */
+.tagcloud a {
+  /* --- 強制重置行內樣式 --- */
+  font-size: 16px !important; /* 你可以自己調整喜歡的大小 */
+  color: #eee !important;
+
+  /* --- 我們自己的樣式 --- */
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  
+  /* 使用 clip-path 創造切角效果 */
+  clip-path: polygon(10px 0%, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  
+  /* 漸層背景 */
+  background: linear-gradient(135deg, #555c6e, #373c49) !important;
+  
+  transition: all 0.25s ease !important;
+}
+
+/* 3. 滑鼠懸浮時的樣式 */
+.tagcloud a:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #667085, #434958) !important;
+  
+  /* 懸浮時的發光效果 */
+  box-shadow: 0 0 15px rgba(80, 150, 220, 0.6); 
+}
+
+/* 4. 暗色模式下的樣式 (這裡可以讓發光效果更明顯) */
+[data-user-color-scheme='dark'] .tagcloud a:hover {
+  box-shadow: 0 0 20px rgba(50, 180, 250, 0.7);
+}

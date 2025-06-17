@@ -1,0 +1,57 @@
+/* 1. 選擇標籤的容器，設定 Flexbox 佈局 */
+.tagcloud {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 24px !important; /* 標籤間距 */
+  padding: 20px 0 !important;
+}
+
+/* 2. 選擇容器內所有的 <a> 標籤，這是我們的目標 */
+.tagcloud a {
+  /* --- 強制重置行內樣式 (最關鍵的一步) --- */
+  font-size: 17px !important; /* 用 !important 覆蓋行內的 font-size */
+  color: #888 !important;     /* 用 !important 覆蓋行內的 color */
+
+  /* --- 我們自己的樣式 --- */
+  position: relative !important;
+  padding: 8px 4px !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  background: none !important; /* 確保無背景 */
+  border: none !important;     /* 確保無邊框 */
+  transition: color 0.3s ease !important;
+}
+
+/* 3. 偽元素，用來製作底線 */
+.tagcloud a::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%); /* 確保從正中間展開 */
+  width: 0 !important;
+  height: 2px !important;
+  background-color: #30a9de !important;
+  transition: width 0.3s ease-in-out !important;
+}
+
+/* 4. 滑鼠懸浮時的樣式 */
+.tagcloud a:hover {
+  color: #333 !important; /* 文字變深 */
+}
+
+.tagcloud a:hover::after {
+  width: 100% !important; /* 底線展開 */
+}
+
+
+/* 5. 暗色模式下的樣式 */
+[data-user-color-scheme='dark'] .tagcloud a {
+  color: #999 !important;
+}
+
+[data-user-color-scheme='dark'] .tagcloud a:hover {
+  color: #eee !important;
+}
