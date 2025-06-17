@@ -227,23 +227,32 @@
   flex-shrink: 0;
   margin-left: auto;
   padding-left: 20px;
+  
+  /* --- 關鍵修改：讓圖示容器本身也成為 Flex 佈局 --- */
+  display: flex;
+  align-items: center;
+  gap: 18px; /* 用 gap 控制圖示間的固定距離 */
 }
+
 .profile-icons .icon-item {
   font-size: 22px;
-  margin-left: 15px;
+  margin-left: 0; /* --- 關鍵修改：移除舊的 margin-left --- */
   color: #666;
   transition: all 0.2s;
 }
-.profile-icons .icon-item:first-child {
-  margin-left: 0;
+
+.profile-icons .icon-item:hover { 
+  transform: scale(1.2); 
+  color: #007bff; 
 }
-.profile-icons .icon-item:hover { transform: scale(1.2); color: #007bff; }
+
 [data-user-color-scheme='dark'] .profile-icons .icon-item {
   color: #b0b0c0;
 }
 [data-user-color-scheme='dark'] .profile-icons .icon-item:hover {
   color: #55aaff;
 }
+
 
 /* --- 小螢幕響應式 --- */
 @media (max-width: 991.98px) {
@@ -271,9 +280,10 @@
   .profile-icons {
     margin-left: 0;
     padding-left: 0;
+    justify-content: center; /* --- 新增：確保圖示在小螢幕下也居中 --- */
   }
   .profile-icons .icon-item {
-    margin: 0 10px;
+    margin: 0; /* --- 修改：由 gap 控制間距，不再需要 margin --- */
   }
 }
 
