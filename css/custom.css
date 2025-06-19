@@ -2,33 +2,33 @@
 /*            A. 全局導覽列圖示與文字統一樣式 (Final Fix)            */
 /* =================================================================== */
 
-/* 1. 針對導覽列中每一個連結 <a> 的基礎設定 */
+/* 1. 導覽列中每個連結 <a> 的基礎排版設定 */
 #navbar .navbar-nav .nav-item .nav-link {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  transition: all 0.2s ease-in-out;
+  display: flex !important;           /* 使用 flex 讓圖示與文字水平排列 */
+  align-items: center !important;     /* 垂直置中對齊 */
+  gap: 8px !important;                /* 圖示與文字間距 */
+  transition: all 0.2s ease-in-out;   /* 添加滑順過渡效果 */
 }
 
-/* 2. 針對所有圖示 <i> 的樣式 */
+/* 2. 導覽列中 iconfont 圖示的樣式 */
 #navbar .navbar-nav .nav-item .nav-link .iconfont {
-  font-family: "iconfont" !important;
+  font-family: "iconfont" !important; /* 使用自定義字型 */
   display: inline-block !important;
   opacity: 1 !important;
   visibility: visible !important;
-  font-size: 1.1em !important;
-  color: #fff !important;
+  font-size: 1.1em !important;        /* 字型大小 */
+  color: #fff !important;             /* 白色圖示 */
   width: auto !important;
   height: auto !important;
-  line-height: 1 !important;
+  line-height: 1 !important;          /* 緊貼上緣 */
 }
 
-/* 3. 懸浮在整個連結 <a> 上時的效果 */
+/* 3. 滑鼠懸浮整個 <a> 時的動畫效果 */
 #navbar .navbar-nav .nav-item .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  border-radius: 6px;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.15) !important; /* 背景淡白 */
+  border-radius: 6px;                                     /* 圓角 */
+  transform: translateY(-2px);                            /* 輕微上移 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);               /* 陰影效果 */
 }
 
 
@@ -36,41 +36,67 @@
 /*                     B. 標籤頁 (Tags Page) 樣式                      */
 /* =================================================================== */
 
+/* 標籤雲的整體排版設定 */
 .tagcloud {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 12px 14px !important;
-  padding: 20px 10px !important;
+  display: flex !important;              /* 使用 flex 排列標籤 */
+  flex-wrap: wrap !important;           /* 自動換行 */
+  justify-content: center !important;   /* 水平置中 */
+  gap: 12px 14px !important;            /* 標籤之間的間距 */
+  padding: 20px 10px !important;        /* 上下與左右內距 */
 }
+
+/* 每一個標籤 <a> 的樣式 */
 .tagcloud a {
   font-size: 16px !important;
   display: inline-block;
   padding: 8px 18px !important;
-  border-radius: 8px;
-  font-weight: 600 !important;
-  text-decoration: none !important;
+  border-radius: 8px;                  /* 圓角標籤 */
+  font-weight: 600 !important;         /* 字體加粗 */
+  text-decoration: none !important;    /* 去除底線 */
   border: none !important;
   transition: all 0.2s ease-in-out;
 }
+
+/* 滑鼠懸浮在標籤上時的動畫效果 */
 .tagcloud a:hover {
-  transform: translateY(-3px) scale(1.03);
+  transform: translateY(-3px) scale(1.03); /* 放大並上移 */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
-[data-user-color-scheme='light'] .tagcloud a { text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.7); }
+
+/* =================== */
+/* ☀️ 淺色模式下的樣式 */
+/* =================== */
+
+/* 淺色模式：加上微弱白色陰影增加層次 */
+[data-user-color-scheme='light'] .tagcloud a {
+  text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.7);
+}
+
+/* 根據順序不同的標籤給予不同顏色（每 6 個循環一次） */
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 1) { background-color: #a2b9d1 !important; color: #3b4d61 !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 2) { background-color: #d8b2b2 !important; color: #6c4f4f !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 3) { background-color: #b3c9b4 !important; color: #4b5d4c !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 4) { background-color: #e0d9d0 !important; color: #72685e !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 5) { background-color: #c0b7d1 !important; color: #554d63 !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 6) { background-color: #c4c4c4 !important; color: #5b5b5b !important; }
+
+/* =================== */
+/* 🌙 深色模式下的樣式 */
+/* =================== */
+
+/* 同樣根據順序給予深色背景與亮色文字，確保對比 */
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 1) { background-color: #4a5c70 !important; color: #e6e9ed !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 2) { background-color: #7a5e5e !important; color: #f0e6e6 !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 3) { background-color: #586b59 !important; color: #e6ede7 !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 4) { background-color: #7c7268 !important; color: #f2efec !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 5) { background-color: #655d73 !important; color: #e9e7ed !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 6) { background-color: #636363 !important; color: #e9e9e9 !important; }
-[data-user-color-scheme='dark'] .tagcloud a:hover { filter: brightness(1.2); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); }
+
+/* 深色模式下懸浮：加亮整體色調，並添加陰影 */
+[data-user-color-scheme='dark'] .tagcloud a:hover {
+  filter: brightness(1.2); /* 整體提亮 */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
 
 
 /* =================================================================== */
@@ -312,44 +338,103 @@
 /* =================================================================== */
 
 #timeline .iconfont {
-  font-family: "iconfont" !important;
+  /* iconfont 圖示字型的基本設定 */
+  font-family: "iconfont" !important; /* 使用自定義字型 */
   display: inline-block !important;
   opacity: 1 !important;
   visibility: visible !important;
   width: 1.2em !important;
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; /* 添加動畫過渡效果 */
 }
+
 #timeline .timeline-item-node .node-icon {
-  color: #888 !important; 
-  background-color: #f1f3f5 !important;
-  border-radius: 50%;
+  /* 時間節點的圓形圖示設定 */
+  color: #888 !important; /* 圖示顏色 */
+  background-color: #f1f3f5 !important; /* 背景色為淡灰 */
+  border-radius: 50%; /* 圓形圖示 */
   width: 1.8em;
   height: 1.8em;
-  line-height: 1.8em;
+  line-height: 1.8em; /* 讓圖示垂直置中 */
   font-size: 1.2em;
 }
+
 #timeline .timeline-post-item .item-icon {
+  /* 每個項目的小圖示樣式 */
   color: #aaa !important;
   font-size: 1em;
-  margin-top: 4px;
+  margin-top: 4px; /* 稍微下移以對齊文字 */
 }
+
 #timeline .timeline-post-item {
-  display: flex; align-items: flex-start; gap: 10px;
-  padding: 8px 0; transition: all 0.2s; border-radius: 6px;
+  /* 單個時間軸項目的外觀設定 */
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-radius: 6px;
+  transition: all 0.2s;
 }
-#timeline .timeline-post-item:hover { background-color: #f8f9fa; }
+
+#timeline .timeline-post-item:hover {
+  /* 滑鼠懸停時改變背景色 */
+  background-color: #f8f9fa;
+}
+
 #timeline .timeline-post-item:hover .item-icon,
-#timeline .timeline-post-item:hover .item-title a { color: #30a9de !important; }
-#timeline .timeline-post-item .item-title a { text-decoration: none; color: #555; transition: color 0.2s; }
-#timeline .timeline-post-item::before { display: none; }
-#timeline .timeline-post-item { margin-left: 0; padding-left: 0; }
-[data-user-color-scheme='dark'] #timeline .timeline-item-node .node-icon { color: #bbb !important; background-color: #2c313a !important; }
-[data-user-color-scheme='dark'] #timeline .timeline-post-item:hover { background-color: #2c313a; }
-[data-user-color-scheme='dark'] #timeline .timeline-post-item .item-icon { color: #888 !important; }
-[data-user-color-scheme='dark'] #timeline .timeline-post-item .item-title a { color: #ccc; }
+#timeline .timeline-post-item:hover .item-title a {
+  /* 滑鼠懸停時小圖示與標題連結變色 */
+  color: #30a9de !important;
+}
+
+#timeline .timeline-post-item .item-title a {
+  /* 標題連結樣式 */
+  text-decoration: none;
+  color: #555;
+  transition: color 0.2s;
+}
+
+#timeline .timeline-post-item::before {
+  /* 移除預設的前置裝飾（如線條或點） */
+  display: none;
+}
+
+#timeline .timeline-post-item {
+  /* 移除左邊距、補上原本系統時間線的縮排 */
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* ======================== */
+/* 深色模式對應樣式設定 */
+/* ======================== */
+
+[data-user-color-scheme='dark'] #timeline .timeline-item-node .node-icon {
+  /* 深色模式下的節點圖示樣式 */
+  color: #bbb !important;
+  background-color: #2c313a !important;
+}
+
+[data-user-color-scheme='dark'] #timeline .timeline-post-item:hover {
+  /* 深色模式下懸停背景色 */
+  background-color: #2c313a;
+}
+
+[data-user-color-scheme='dark'] #timeline .timeline-post-item .item-icon {
+  /* 深色模式下的小圖示顏色 */
+  color: #888 !important;
+}
+
+[data-user-color-scheme='dark'] #timeline .timeline-post-item .item-title a {
+  /* 深色模式下的標題連結顏色 */
+  color: #ccc;
+}
+
 [data-user-color-scheme='dark'] #timeline .timeline-post-item:hover .item-icon,
-[data-user-color-scheme='dark'] #timeline .timeline-post-item:hover .item-title a { color: #55aaff !important; }
+[data-user-color-scheme='dark'] #timeline .timeline-post-item:hover .item-title a {
+  /* 深色模式下滑鼠懸停變色 */
+  color: #55aaff !important;
+}
 
 
 /* =================================================================== */
@@ -357,26 +442,61 @@
 /* =================================================================== */
 
 .index-img a {
+  /* 外層容器為區塊元素，包含圖片 */
   display: block;
-  overflow: hidden;
-  border-radius: 8px;
-  aspect-ratio: 16 / 9;
+  overflow: hidden; /* 隱藏超出邊界的內容 */
+  border-radius: 8px; /* 圓角邊框 */
+  aspect-ratio: 16 / 9; /* 設定寬高比例為 16:9 */
   position: relative;
-  height: 0;
-  padding-top: 56.25%;
+  height: 0; /* 高度為 0，結合 padding-top 達成比例容器 */
+  padding-top: 56.25%; /* 高度為寬度的 16:9（9 ÷ 16 = 0.5625） */
 }
+
 .index-img a img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* 內部圖片樣式設定 */
+  width: 100%; /* 撐滿容器寬度 */
+  height: 100%; /* 撐滿容器高度 */
+  object-fit: cover; /* 圖片裁切填滿容器不變形 */
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease; /* 增加懸浮放大效果 */
+  transition: transform 0.3s ease; /* 加入平滑過渡效果：放大時更自然 */
 }
+
 .index-img a:hover img {
-    transform: scale(1.05); /* 懸浮時圖片放大 */
+  /* 滑鼠懸停時圖片稍微放大 */
+  transform: scale(1.05);
 }
+
 .index-card {
+  /* index-card 區塊內容置中對齊（假設這用在 flex 容器內） */
   align-items: center;
+}
+
+/* 正常情況下，每篇文章下方有分隔線 */
+.index-card {
+  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px dashed #ccc; /* 虛線 */
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+/* 深色模式下的分隔線顏色調整 */
+[data-user-color-scheme='dark'] .index-card {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px dashed #7b7b7b; /* 虛線 */
+}
+
+/* 最後一篇文章不加分隔線（淺色模式） */
+.index-card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* 深色模式下也不顯示最後一篇文章的分隔線 */
+[data-user-color-scheme='dark'] .index-card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
