@@ -4,50 +4,31 @@
 
 /* 1. 針對導覽列中每一個連結 <a> 的基礎設定 */
 #navbar .navbar-nav .nav-item .nav-link {
-  display: flex !important;         /* 使用 Flexbox 進行對齊 */
-  align-items: center !important;  /* 讓圖示和文字垂直居中 */
-  gap: 8px !important;             /* 圖示和文字之間的距離 */
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
   transition: all 0.2s ease-in-out;
 }
 
 /* 2. 針對所有圖示 <i> 的樣式 */
 #navbar .navbar-nav .nav-item .nav-link .iconfont {
-  /* 強制設定字體和可見性 */
   font-family: "iconfont" !important;
   display: inline-block !important;
   opacity: 1 !important;
   visibility: visible !important;
-  
-  /* 統一大小和顏色 */
   font-size: 1.1em !important;
-  color: #fff !important; /* 強制白色 */
-  
-  /* 移除不必要的寬高設定，讓它自適應 */
+  color: #fff !important;
   width: auto !important;
   height: auto !important;
-  line-height: 1 !important; /* 確保行高正常 */
+  line-height: 1 !important;
 }
 
-/* 3. 針對所有文字 <span> 的樣式 */
-/* 4. 滑鼠懸浮在整個連結 <a> 上時的效果 */
+/* 3. 懸浮在整個連結 <a> 上時的效果 */
 #navbar .navbar-nav .nav-item .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.15) !important; /* 背景稍微再亮一點 */
+  background-color: rgba(255, 255, 255, 0.15) !important;
   border-radius: 6px;
-  transform: translateY(-2px); /* !!! 新增：向上移動 2px !!! */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* !!! 新增：加上陰影 !!! */
-}
-
-/* 4. 滑鼠懸浮在整個連結 <a> 上時的效果 */
-#navbar .navbar-nav .nav-item .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  border-radius: 6px;
-}
-
-/* 懸浮時，圖示和文字的顏色可以保持不變，或稍微提亮 */
-#navbar .navbar-nav .nav-item .nav-link:hover .iconfont,
-#navbar .navbar-nav .nav-item .nav-link:hover span {
-  /* 顏色可以保持白色，或者改成一個更亮的顏色，例如 #eee */
-  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -62,7 +43,6 @@
   gap: 12px 14px !important;
   padding: 20px 10px !important;
 }
-
 .tagcloud a {
   font-size: 16px !important;
   display: inline-block;
@@ -73,100 +53,103 @@
   border: none !important;
   transition: all 0.2s ease-in-out;
 }
-
 .tagcloud a:hover {
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
-
-/* --- 亮色模式 (Light Mode) --- */
-[data-user-color-scheme='light'] .tagcloud a {
-  text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.7);
-}
+[data-user-color-scheme='light'] .tagcloud a { text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.7); }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 1) { background-color: #a2b9d1 !important; color: #3b4d61 !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 2) { background-color: #d8b2b2 !important; color: #6c4f4f !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 3) { background-color: #b3c9b4 !important; color: #4b5d4c !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 4) { background-color: #e0d9d0 !important; color: #72685e !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 5) { background-color: #c0b7d1 !important; color: #554d63 !important; }
 [data-user-color-scheme='light'] .tagcloud a:nth-child(6n + 6) { background-color: #c4c4c4 !important; color: #5b5b5b !important; }
-
-/* --- 暗色模式 (Dark Mode) --- */
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 1) { background-color: #4a5c70 !important; color: #e6e9ed !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 2) { background-color: #7a5e5e !important; color: #f0e6e6 !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 3) { background-color: #586b59 !important; color: #e6ede7 !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 4) { background-color: #7c7268 !important; color: #f2efec !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 5) { background-color: #655d73 !important; color: #e9e7ed !important; }
 [data-user-color-scheme='dark'] .tagcloud a:nth-child(6n + 6) { background-color: #636363 !important; color: #e9e9e9 !important; }
-[data-user-color-scheme='dark'] .tagcloud a:hover {
-  filter: brightness(1.2);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
+[data-user-color-scheme='dark'] .tagcloud a:hover { filter: brightness(1.2); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); }
 
 
 /* =================================================================== */
 /*              C. 首頁個人資訊卡 (Home Page Profile Card) 樣式          */
 /* =================================================================== */
 
-/* 卡片本身 */
 .profile-card {
-  margin-top: -60px;
-  margin-bottom: 50px;
-  z-index: 10;
+  /* 整個個人資訊卡的外觀設定 */
+  margin-top: -60px; /* 往上移動讓它部分覆蓋上方內容 */
+  margin-bottom: 50px; /* 與下方區塊的距離 */
+  z-index: 10; /* 疊層順序，確保在其他元素之上 */
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  background: rgba(255, 255, 255, 0.9); /* 半透明白底 */
+  backdrop-filter: blur(8px); /* 背景模糊效果 */
+  -webkit-backdrop-filter: blur(8px); /* Safari 支援 */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 淡淡邊框 */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* 陰影效果 */
 }
-[data-user-color-scheme='dark'] .profile-card { 
-  background: rgba(40, 45, 60, 0.8); 
+
+/* 深色模式下的個人資訊卡背景與邊框 */
+[data-user-color-scheme='dark'] .profile-card {
+  background: rgba(40, 45, 60, 0.8);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* 左側頭像 */
 .profile-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-  object-fit: cover;
+  /* 頭像樣式 */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* 圓形 */
+  border: 3px solid #fff; /* 白邊 */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12); /* 陰影 */
+  object-fit: cover; /* 填滿容器不變形 */
   transition: transform 0.3s ease;
 }
+
+/* 滑鼠懸停時放大旋轉效果 */
 .profile-avatar:hover {
   transform: scale(1.05) rotate(-4deg);
 }
+
+/* 深色模式下的頭像邊框顏色 */
 [data-user-color-scheme='dark'] .profile-avatar {
   border-color: #252d38;
 }
 
-/* 右側內容區 */
 .profile-content {
-  padding: 15px 25px; /* !!! 關鍵修改：增加左右內邊距 */
+  /* 內文區塊的內距 */
+  padding: 15px 25px;
 }
 
-/* 右側上半部分 (名字、簡介、統計) */
 .profile-main-info {
+  /* 上方頭像與文字區塊 */
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 20px;
 }
+
 .profile-name {
+  /* 姓名標題 */
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 5px;
 }
+
 .profile-intro {
+  /* 個人簡介文字 */
   font-size: 15px;
   color: #777;
 }
-[data-user-color-scheme='dark'] .profile-intro { 
-  color: #a0a0b0; 
+
+/* 深色模式下的個人簡介文字顏色 */
+[data-user-color-scheme='dark'] .profile-intro {
+  color: #a0a0b0;
 }
 
 .profile-stats {
+  /* 統計資料區（如文章數、粉絲） */
   display: flex;
   gap: 20px;
   text-align: center;
@@ -174,37 +157,58 @@
   padding-top: 5px;
   margin-left: auto;
 }
-.profile-stats a { text-decoration: none; color: inherit; }
-.profile-stats .stat-count { font-size: 20px; font-weight: 600; }
-.profile-stats .stat-label { font-size: 13px; color: #888; }
-[data-user-color-scheme='dark'] .profile-stats .stat-label { 
+
+.profile-stats a {
+  /* 點擊統計資料可導向連結 */
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-stats .stat-count {
+  /* 統計數字 */
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.profile-stats .stat-label {
+  /* 統計標籤 */
+  font-size: 13px;
+  color: #888;
+}
+
+/* 深色模式下的標籤文字 */
+[data-user-color-scheme='dark'] .profile-stats .stat-label {
   color: #a0a0b0;
 }
 
-/* 分隔線 */
 .profile-divider {
+  /* 分隔線 */
   margin: 20px 0;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
+
+/* 深色模式下的分隔線 */
 [data-user-color-scheme='dark'] .profile-divider {
   border-top-color: rgba(255, 255, 255, 0.1);
 }
 
-/* 右側下半部分 (興趣標籤、社群圖示) */
 .profile-bottom-info {
+  /* 下方興趣與圖示區 */
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-/* 興趣標籤 */
 .interest-tags {
+  /* 興趣標籤群組 */
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
+
 .interest-tag-item {
+  /* 每個興趣標籤的樣式 */
   display: inline-block;
   padding: 6px 15px;
   border-radius: 8px;
@@ -213,39 +217,56 @@
   cursor: default;
   transition: transform 0.2s;
 }
-.interest-tag-item:hover { transform: scale(1.1); }
-.interest-tag-item:nth-child(1) { background-color: #a2b9d1; color: #3b4d61; }
-.interest-tag-item:nth-child(2) { background-color: #b3c9b4; color: #4b5d4c; }
-.interest-tag-item:nth-child(3) { background-color: #d8b2b2; color: #6c4f4f; }
-[data-user-color-scheme='dark'] .interest-tag-item { 
-  background-color: #3e4451; 
+
+/* 滑鼠懸停標籤時放大 */
+.interest-tag-item:hover {
+  transform: scale(1.1);
+}
+
+/* 不同順序的標籤使用不同背景顏色 */
+.interest-tag-item:nth-child(1) {
+  background-color: #a2b9d1;
+  color: #3b4d61;
+}
+.interest-tag-item:nth-child(2) {
+  background-color: #b3c9b4;
+  color: #4b5d4c;
+}
+.interest-tag-item:nth-child(3) {
+  background-color: #d8b2b2;
+  color: #6c4f4f;
+}
+
+/* 深色模式下統一的標籤樣式 */
+[data-user-color-scheme='dark'] .interest-tag-item {
+  background-color: #3e4451;
   color: #d8dee9;
 }
 
-/* 社群圖示 */
 .profile-icons {
+  /* 社群圖示區 */
   flex-shrink: 0;
   margin-left: auto;
   padding-left: 20px;
-  
-  /* --- 關鍵修改：讓圖示容器本身也成為 Flex 佈局 --- */
   display: flex;
   align-items: center;
-  gap: 18px; /* 用 gap 控制圖示間的固定距離 */
+  gap: 18px;
 }
 
 .profile-icons .icon-item {
   font-size: 22px;
-  margin-left: 0; /* --- 關鍵修改：移除舊的 margin-left --- */
+  margin-left: 0;
   color: #666;
   transition: all 0.2s;
 }
 
-.profile-icons .icon-item:hover { 
-  transform: scale(1.2); 
-  color: #007bff; 
+/* 滑鼠懸停時圖示放大與變色 */
+.profile-icons .icon-item:hover {
+  transform: scale(1.2);
+  color: #007bff;
 }
 
+/* 深色模式下的圖示顏色 */
 [data-user-color-scheme='dark'] .profile-icons .icon-item {
   color: #b0b0c0;
 }
@@ -253,8 +274,7 @@
   color: #55aaff;
 }
 
-
-/* --- 小螢幕響應式 --- */
+/* 響應式設計：畫面寬度小於 991.98px 時的調整 */
 @media (max-width: 991.98px) {
   .profile-content {
     text-align: center;
@@ -280,13 +300,83 @@
   .profile-icons {
     margin-left: 0;
     padding-left: 0;
-    justify-content: center; /* --- 新增：確保圖示在小螢幕下也居中 --- */
+    justify-content: center;
   }
   .profile-icons .icon-item {
-    margin: 0; /* --- 修改：由 gap 控制間距，不再需要 margin --- */
+    margin: 0;
   }
 }
 
+/* =================================================================== */
+/*             D. 網站歷程頁 (Timeline Page) 樣式優化                */
+/* =================================================================== */
+
+#timeline .iconfont {
+  font-family: "iconfont" !important;
+  display: inline-block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: 1.2em !important;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+#timeline .timeline-item-node .node-icon {
+  color: #888 !important; 
+  background-color: #f1f3f5 !important;
+  border-radius: 50%;
+  width: 1.8em;
+  height: 1.8em;
+  line-height: 1.8em;
+  font-size: 1.2em;
+}
+#timeline .timeline-post-item .item-icon {
+  color: #aaa !important;
+  font-size: 1em;
+  margin-top: 4px;
+}
+#timeline .timeline-post-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0; transition: all 0.2s; border-radius: 6px;
+}
+#timeline .timeline-post-item:hover { background-color: #f8f9fa; }
+#timeline .timeline-post-item:hover .item-icon,
+#timeline .timeline-post-item:hover .item-title a { color: #30a9de !important; }
+#timeline .timeline-post-item .item-title a { text-decoration: none; color: #555; transition: color 0.2s; }
+#timeline .timeline-post-item::before { display: none; }
+#timeline .timeline-post-item { margin-left: 0; padding-left: 0; }
+[data-user-color-scheme='dark'] #timeline .timeline-item-node .node-icon { color: #bbb !important; background-color: #2c313a !important; }
+[data-user-color-scheme='dark'] #timeline .timeline-post-item:hover { background-color: #2c313a; }
+[data-user-color-scheme='dark'] #timeline .timeline-post-item .item-icon { color: #888 !important; }
+[data-user-color-scheme='dark'] #timeline .timeline-post-item .item-title a { color: #ccc; }
+[data-user-color-scheme='dark'] #timeline .timeline-post-item:hover .item-icon,
+[data-user-color-scheme='dark'] #timeline .timeline-post-item:hover .item-title a { color: #55aaff !important; }
 
 
+/* =================================================================== */
+/*            E. 首頁文章卡片縮圖比例優化 (Index Image Ratio)          */
+/* =================================================================== */
 
+.index-img a {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  height: 0;
+  padding-top: 56.25%;
+}
+.index-img a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease; /* 增加懸浮放大效果 */
+}
+.index-img a:hover img {
+    transform: scale(1.05); /* 懸浮時圖片放大 */
+}
+.index-card {
+  align-items: center;
+}
